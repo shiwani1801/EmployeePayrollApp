@@ -30,17 +30,28 @@ window.addEventListener('DOMContentLoaded', (event) => {
     const output = document.querySelector('.salary-output')
     output.textContent = salary.value;
     salary.addEventListener('input', function () {
-    output.textContent = salary.value;
+        output.textContent = salary.value;
     });
 });
 
 const save = () => {
     try {
         let employeePayrollData = createEmployeePayroll();
+        createAndUpdateStorage(employeePayrollData);
     }
     catch (e) {
         return
     }
+}
+
+function createAndUpdateStorage(employeePayroll) {
+    let employeePayrollList = JSON.parse(localStorage.getItem("EmployeePayrollList"));
+    if(employeePayrollList != undefined)
+        employeePayrollList.push(employeePayroll);
+    else
+        employeePayrollList = [employeePayroll];
+    alert(employeePayrollList.toString());
+    localStorage.setItem("EmployeePayrollList", JSON.stringify(employeePayrollList));
 }
 
 
