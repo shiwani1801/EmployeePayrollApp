@@ -1,3 +1,4 @@
+
 body {
     margin: 0;
     height: 100;
@@ -80,7 +81,7 @@ label{
     display: inline-block;
 }
 .text{
-    font-size: 16px;
+    font-size: 12px;
     color: #42515f;
     opacity: 1;
     font-family: Roboto;
