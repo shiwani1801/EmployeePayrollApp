@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/home.css">
+    <title>Employee Payroll Form</title>
+    <script defer src = "../js/EmployeePayrollScript.js"></script>
+</head>
+<body>
+    <header class="header-content header">
+        <div class="logo-content">
+            <img src="../assets/images/logo.png" alt="program">
+        <div>
+            <span class="employee">EMPLOYEE</span><br>
+            <span class="employee payroll">PAYROLL</span>
+        </div>
+        </div>
+    </header> 
+    <div class="main-content">
+        <div class="header-content">
+            <div class="emp-detail-text">
+                Employee Details<div class="emp-count">10</div>
+            </div>
+            <a href="../pages/EmployeePayrollForm.html" class="add-button">
+            <img src="../assets/icons/add-24px.svg" alt="">Add User</a>
+        </div>
+        <div class="table-main">    
+            <table id="display" class="table">
+                <tr>
+                    <th></th>
+                    <th>Name</th>
+                    <th>Gender</th>
+                    <th>Department</th>
+                    <th>Salary</th>
+                    <th>Start Date</th>
+                    <th>Actions</th>
+                </tr>
+                <tr>
+                    <td><img class="profile" alt="" src="../assets/profile-images/Ellipse -4.png">
+                    </td>
+                    <td>Krunali</td>
+                    <td>Female</td>
+                    <td><div class="dept-label">Engineer</div>
+                    <div class="dept-label">Finance</div></td>
+                    <td>3000000</td>
+                    <td>1 Nov 2020</td>
+                    <td>
+                        <img id="1" onclick="remove(this)" alt="delete"
+                            src="../assets/icons/delete-black-18dp.svg">
+                        <img id="1"  alt="edit" onclick="update(this)"
+                            src="../assets/icons/create-black-18dp.svg">
+                    </td>
+                </tr>
+            </table>
+            </div>
+    </div>
+</body>
+</html>
