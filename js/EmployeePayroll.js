@@ -37,7 +37,12 @@ class EmployeePayrollData {
     }
     get startDate() { return this._startDate; } 
     set startDate(startDate) {
-       this._startDate = startDate;
+        let now = new Date();
+        if(startDate > now ) throw 'Start Date is a Future Date'
+        var diff = Math.abs(now.getTime() - startDate.getTime());
+        if(diff / (1000 * 60 * 60 * 24) > 30)
+           throw 'Start Date is beyond 30 days';
+        this._startDate = startDate;
     }   
 
     toString() {
@@ -49,9 +54,3 @@ class EmployeePayrollData {
    }
 }
 
-const salary=document.querySelector('#salary');
-const output =document.querySelector('.salary-output');
-output.textContent=salary.value;
-salary.addEventListener('input',function() {
-output.textContent=salary.value;
-});
